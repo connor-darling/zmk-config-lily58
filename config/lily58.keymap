@@ -5,7 +5,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/ext_power.h>
 
 / {
     macros {
@@ -43,41 +42,21 @@
 
         default_layer {
             bindings = <
-/* top row (unused) */
-&trans &trans &trans &trans &trans &trans                 &trans &trans &trans &trans &trans &trans
-
-/* row 1 */
-&kp TAB   &kp Q  &kp W  &kp E  &kp R  &kp T               &kp Y  &kp U  &kp I  &kp O  &kp P   &kp BSPC
-
-/* row 2 */
-&kp ESC   &kp A  &kp S  &kp D  &kp F  &kp G               &kp H  &kp J  &kp K  &kp L  &kp SEMI &kp RET
-
-/* row 3 */
-&kp LSHFT &kp Z  &kp X  &kp C  &kp V  &kp B  &trans &trans &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH &kp SQT
-
-/* thumbs */
-                        &trans &kp LCTRL &kp LGUI &mo 1  &kp SPACE   &kp RGUI &mo 2 &trans
+&trans     &trans  &trans  &trans  &trans     &trans                         &trans    &trans  &trans     &trans   &trans    &trans
+&kp TAB    &kp Q   &kp W   &kp E   &kp R      &kp T                          &kp Y     &kp U   &kp I      &kp O    &kp P     &kp BSPC
+&kp ESC    &kp A   &kp S   &kp D   &kp F      &kp G                          &kp H     &kp J   &kp K      &kp L    &kp SEMI  &kp RET
+&kp LSHFT  &kp Z   &kp X   &kp C   &kp V      &kp B     &trans    &trans     &kp N     &kp M   &kp COMMA  &kp DOT  &kp FSLH  &kp SQT
+                           &trans  &kp LCTRL  &kp LGUI  &mo 1     &kp SPACE  &kp RGUI  &mo 2   &trans
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         lower_layer {
             bindings = <
-/* top row */
-&trans &trans &trans &trans &trans &trans                 &trans &trans &trans &trans &trans &trans
-
-/* row 1 */
-&trans &kp N1 &kp N2 &kp N3 &kp N4 &kp N5                 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &trans
-
-/* row 2 */
-&trans &trans &kp C_BRI_UP &kp C_PP &kp C_VOL_UP &kp LGUI &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-
-/* row 3 */
-&trans &trans &kp C_BRI_DEC &kp K_MUTE &kp C_VOL_DN &kp LALT &trans &kp C_RW &kp C_FAST_FORWARD &trans &trans &bt BT_CLR_ALL
-
-/* thumbs */
-                        &trans &trans &trans &trans &trans &trans &kp RALT &trans
+&trans  &trans  &trans         &trans      &trans        &trans                        &trans    &trans    &trans    &trans          &trans  &trans
+&trans  &kp N1  &kp N2         &kp N3      &kp N4        &kp N5                        &kp N6    &kp N7    &kp N8    &kp N9          &kp N0  &trans
+&trans  &trans  &kp C_BRI_UP   &kp C_PP    &kp C_VOL_UP  &kp LGUI                      &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT       &trans  &trans
+&trans  &trans  &kp C_BRI_DEC  &kp K_MUTE  &kp C_VOL_DN  &kp LALT  &trans    &trans    &trans    &kp C_RW  &kp C_FF  &bt BT_CLR_ALL  &trans  &trans
+                               &trans      &trans        &trans    &trans    &kp RALT  &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -85,24 +64,14 @@
 
         raise_layer {
             bindings = <
-/* top row */
-&trans &trans &trans &trans &trans &trans                 &trans &trans &trans &trans &trans &trans
-
-/* row 1 */
-&ss_select &trans &trans &trans &trans &kp PLUS           &kp EQUAL &kp LPAR &kp RPAR &kp PLUS &trans &trans
-
-/* row 2 */
-&ss_toolbar &trans &trans &kp COMMA &kp PERIOD &kp GRAVE  &kp MINUS &kp LBRC &kp RBRC &kp BSLH &trans &trans
-
-/* row 3 */
-&trans &trans &trans &trans &trans &trans &kp UNDER &kp LBKT &kp RBKT &kp PIPE &trans &trans
-
-/* thumbs */
-                        &trans &trans &trans &trans &trans &trans &trans &trans
+&trans       &trans  &trans  &trans     &trans      &trans                       &trans          &trans            &trans             &trans    &trans  &trans
+&ss_select   &trans  &trans  &trans     &trans      &kp PLUS                     &kp EQUAL       &kp LPAR          &kp RPAR           &kp PLUS  &trans  &trans
+&ss_toolbar  &trans  &trans  &kp COMMA  &kp PERIOD  &kp GRAVE                    &kp MINUS       &kp LBRC          &kp RBRC           &kp BSLH  &trans  &trans
+&trans       &trans  &trans  &trans     &trans      &trans     &trans    &trans  &kp UNDERSCORE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PIPE  &trans  &trans
+                             &trans     &trans      &trans     &trans    &trans  &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
     };
 };
-
